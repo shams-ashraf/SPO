@@ -9,7 +9,7 @@ import hashlib
 from typing import List, Dict, Tuple
 from collections import Counter
 from deep_translator import GoogleTranslator
-from semantic_text_splitter import TextSplitter
+from semantic_text_splitter import SemanticTextSplitter
 from tokenizers import Tokenizer
 
 CACHE_FOLDER = os.getenv("CACHE_FOLDER", "./cache")
@@ -32,7 +32,7 @@ OVERLAP_TOKENS = 50  # Overlap between chunks for context
 
 # Initialize semantic splitter
 try:
-    splitter = TextSplitter.from_huggingface_tokenizer(
+    splitter = SemanticTextSplitter.from_huggingface_tokenizer(
         Tokenizer.from_pretrained("intfloat/multilingual-e5-large"),
         capacity=MAX_EMBEDDING_TOKENS,
         overlap=OVERLAP_TOKENS
@@ -649,4 +649,5 @@ def extract_pdf_detailed(pdf_path: str):
         print(f"\n❌ Error processing {pdf_path}: {str(e)}")
 
         return None, str(e)
+
 
