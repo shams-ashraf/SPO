@@ -24,8 +24,7 @@ st.set_page_config(
 )
 
 load_custom_css()
-
-DOCS_FOLDER = r"C:\Users\DELL\Desktop\lasst-main\documents"
+DOCS_FOLDER = "/mount/src/spo/documents"
 CACHE_FOLDER = os.getenv("CACHE_FOLDER", "./cache")
 CHROMA_FOLDER = "./chroma_db"
 
