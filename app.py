@@ -77,7 +77,7 @@ else:
             st.stop()
 
         collection = client.create_collection(
-            name="biomed_docs",
+            name="biomed_docs2",
             embedding_function=get_embedding_function(),
             metadata={"hnsw:space": "cosine"}  
         )
