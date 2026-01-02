@@ -13,8 +13,8 @@ from semantic_text_splitter import TextSplitter
 from tokenizers import Tokenizer
 
 CACHE_FOLDER = os.getenv("CACHE_FOLDER", "./cache")
-DOCS_FOLDER = r"C:\Users\DELL\Desktop\lasst-main\documents"
-TESSERACT_PATH = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+DOCS_FOLDER = "/mount/src/spo/documents"
+TESSDATA_PATH = os.getenv("TESSDATA_PATH")
 
 pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
 
@@ -647,4 +647,5 @@ def extract_pdf_detailed(pdf_path: str):
     
     except Exception as e:
         print(f"\n❌ Error processing {pdf_path}: {str(e)}")
+
         return None, str(e)
