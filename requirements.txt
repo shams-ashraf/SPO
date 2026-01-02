@@ -1,11 +1,13 @@
 streamlit
 chromadb
 sentence-transformers
-PyMuPDF
 pdfplumber
+PyMuPDF
 pytesseract
 Pillow
 python-dotenv
 requests
-httpx
 deep-translator
+semantic-text-splitter
+tokenizers
+numpy
