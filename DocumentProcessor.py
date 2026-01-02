@@ -14,7 +14,7 @@ from tokenizers import Tokenizer
 
 CACHE_FOLDER = os.getenv("CACHE_FOLDER", "./cache")
 DOCS_FOLDER = "/mount/src/spo/documents"
-TESSDATA_PATH = os.getenv("TESSDATA_PATH")
+TESSERACT_PATH = os.getenv("TESSDATA_PATH")
 
 pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
 
@@ -649,3 +649,4 @@ def extract_pdf_detailed(pdf_path: str):
         print(f"\n❌ Error processing {pdf_path}: {str(e)}")
 
         return None, str(e)
+
